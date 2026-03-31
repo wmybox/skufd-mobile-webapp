@@ -1,0 +1,34 @@
+title: SKUFD Blog
+description: News, updates, and release notes for the SKUFD mobile app.
+url: "https://skufd.com"
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  legal:
+    output: true
+    permalink: /legal/:title/
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "_legal"
+      type: legal
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
